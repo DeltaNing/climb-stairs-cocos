@@ -387,7 +387,7 @@ cc.Class({
                         this.node.off(cc.Node.EventType.TOUCH_START,
                             this.onTouchStart, this); // 取消监听touch_start事件
 
-                        var downAction = cc.moveBy(0.4, cc.v2(0, -400));
+                        var downAction = cc.moveBy(0.5, cc.v2(0, -600));
                         var callback = cc.callFunc(this.gameIsOver, this); //callFunc在动画执行完毕后调用哪个方法
 
                         var seq = cc.sequence(downAction, callback);
@@ -422,6 +422,10 @@ cc.Class({
     },
 
     onTouchStart: function (event) {
+        // console.log(this.node.getChildByName('modal'))
+        if(this.node.getChildByName('modal').active || this.node.getChildByName('gameOver').active) {
+            return false;
+        }
         if (!this.clickTimes) {
             let instrucion = cc.find("Canvas/instruction");
             let fadeout = cc.fadeOut(0.2, 1);
