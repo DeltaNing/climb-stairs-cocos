@@ -24,6 +24,7 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
+        cc.log(this.node)
         console.log('over')
         var score = cc.sys.localStorage.getItem("score");
         if (score) {
@@ -41,9 +42,10 @@ cc.Class({
         });
         this.rankBtn.on('touchstart',function() {
             // 显示排行榜面板
-            cc.find('Canvas/modal').active = true;
-            cc.log(cc.find('Canvas/modal/panel'))
-            cc.find('Canvas/modal/panel').getComponent('Btns').clickNum = 1;
+            let modal = cc.find('Canvas/modal');
+            modal.zIndex = 3; // gameover 的zindex是2，排行榜面板在gameover上面
+            modal.active = true;
+            modal.getComponent('Btns').clickNum = 1;
         })
     },
 

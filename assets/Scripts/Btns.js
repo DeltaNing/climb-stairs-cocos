@@ -17,7 +17,9 @@ cc.Class({
 
     // LIFE-CYCLE CALLBACKS:
 
-    
+    onLoad() {
+        console.log(this.node)
+    },
 
     start () {
 
