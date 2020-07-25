@@ -56,7 +56,7 @@ cc.Class({
 
             //find为查找场景下对应的组件，getComponent为对应的组件类型
             // var stair = cc.find("Canvas/scorePanel/scoreLabel").getComponent(cc.Label);   
-            console.log('player')
+            // console.log('player')
             //获取在Canvas上的分数label来更新分数
             var scoreLabel = cc.find("Canvas/scorePanel/scoreLabel").getComponent(cc.Label);   //find为查找场景下对应的组件，getComponent为对应的组件类型
             if (scoreLabel) {

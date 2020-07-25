@@ -12,20 +12,34 @@ cc.Class({
     extends: cc.Component,
 
     properties: {
-        clickNum: 0
+        parentNode: {
+            default: null,
+            type: cc.Node
+        }
     },
 
     // LIFE-CYCLE CALLBACKS:
 
-    onLoad() {
-        // console.log(this.node)
+    onLoad () {
+        // cc.log(this.node);
+        let click = new cc.Component.EventHandler();
+        click.target = this.node;
+        click.component = 'closeModal';
+        click.handler = 'callback';
+        // click.customEventData = "foobar";
+        
+        let button = this.node.getComponent(cc.Button);
+        button.clickEvents.push(click);
+    },
+
+    callback: function (event) {
+        this.parentNode.active = false;
+        // console.log(this.parentNode)
     },
 
     start () {
 
-    },
+    }
 
-    update (dt) {
-
-    },
+    // update (dt) {},
 });

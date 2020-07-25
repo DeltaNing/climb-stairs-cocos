@@ -470,7 +470,7 @@ cc.Class({
     },
     // 修改背景图片
     changeBGTexture(url, level) {
-        console.log(level)
+        // console.log(level)
         this.levelControl = level;
         let self = this;
         cc.loader.loadRes(url, cc.SpriteFrame, function (err, spriteFrame) {

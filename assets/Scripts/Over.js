@@ -24,8 +24,8 @@ cc.Class({
     // LIFE-CYCLE CALLBACKS:
 
     onLoad () {
-        cc.log(this.node)
-        console.log('over')
+        // cc.log(this.node)
+        // console.log('over')
         var score = cc.sys.localStorage.getItem("score");
         if (score) {
             this.scoreLabel.string = "您的得分："+score;
@@ -38,7 +38,7 @@ cc.Class({
             self.node.active = false
             cc.sys.localStorage.removeItem("score");
             cc.director.loadScene("GameScene")
-            cc.log(self.node)
+            // cc.log(self.node)
         });
         this.rankBtn.on('touchstart',function() {
             // 显示排行榜面板

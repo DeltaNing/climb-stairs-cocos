@@ -19,7 +19,7 @@ cc.Class({
     // },
 
     onCollisionEnter: function(other, self) {
-        console.log(this.node)
+        // console.log(this.node)
     },
 
     onCollisionStay: function (other, self) {
